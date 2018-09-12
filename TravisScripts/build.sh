@@ -5,6 +5,7 @@ project="Unity project"
 ## Make the builds
 # Recall from install.sh that a separate module was needed for Windows build support
 echo "Attempting build of $project for Windows"
+echo $(pwd)
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
 	-batchmode \
 	-nographics \
