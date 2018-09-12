@@ -14,9 +14,9 @@ echo "Attempting build of $project for Windows"
 	-buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
 	-quit
 
-rc1=$?
-echo "Build logs (Windows)"
-cat $(pwd)/unity.log
+# rc1=$?
+# echo "Build logs (Windows)"
+# cat $(pwd)/unity.log
 
 echo "Attempting build of $project for OSX"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
@@ -28,8 +28,8 @@ echo "Attempting build of $project for OSX"
 	-buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
 	-quit
 
-rc2=$?
-echo "Build logs (OSX)"
+# rc2=$?
+# echo "Build logs (OSX)"
 cat $(pwd)/unity.log
 
-exit $(($rc1|$rc2))
+# exit $(($rc1|$rc2))
