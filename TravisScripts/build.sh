@@ -14,6 +14,9 @@ echo $(pwd)
 	-projectPath $(pwd) \
 	-buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
 	-quit
+	
+echo "Build logs (Windows)"
+cat $(pwd)/unity.log
 
 echo "Attempting build of $project for OSX"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
