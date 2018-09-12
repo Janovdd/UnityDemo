@@ -1,42 +1,35 @@
 #! /bin/sh
 
-project="Unity project"
+{UNITYCI_PROJECT_NAME}="Unity project"
 
-echo "Attempting to build $project for Windows"
+## Make the builds
+# Recall from install.sh that a separate module was needed for Windows build support
+echo "Attempting build of ${UNITYCI_PROJECT_NAME} for Windows"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
-  -logFile $(pwd)/unity.log \ 
-  -projectPath $(pwd)/$project \
-  -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
-  -quit
+	-batchmode \
+	-nographics \
+	-silent-crashes \
+	-logFile $(pwd)/unity.log \
+	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
+	-buildWindowsPlayer "$(pwd)/Build/windows/${UNITYCI_PROJECT_NAME}.exe" \
+	-quit
 
-echo "Attempting to build $project for OS X"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
-  -logFile $(pwd)/unity.log \  
-  -projectPath $(pwd)/$project \
-  -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
-  -quit
-
-echo "Attempting to build $project for Linux"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
-  -logFile $(pwd)/unity.log \
-  -projectPath $(pwd)/$project \
-  -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project.exe" \
-  -quit
-
-echo 'Logs from build'
+rc1=$?
+echo "Build logs (Windows)"
 cat $(pwd)/unity.log
 
+echo "Attempting build of ${UNITYCI_PROJECT_NAME} for OSX"
+/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+	-batchmode \
+	-nographics \
+	-silent-crashes \
+	-logFile $(pwd)/unity.log \
+	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
+	-buildOSXUniversalPlayer "$(pwd)/Build/osx/${UNITYCI_PROJECT_NAME}.app" \
+	-quit
 
-echo 'Attempting to zip builds'
-zip -r $(pwd)/Build/linux.zip $(pwd)/Build/linux/
-zip -r $(pwd)/Build/mac.zip $(pwd)/Build/osx/
-zip -r $(pwd)/Build/windows.zip $(pwd)/Build/windows/
+rc2=$?
+echo "Build logs (OSX)"
+cat $(pwd)/unity.log
+
+exit $(($rc1|$rc2))
