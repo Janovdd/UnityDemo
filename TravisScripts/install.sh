@@ -2,7 +2,7 @@
 
 BASE_URL=https://netstorage.unity3d.com/unity
 HASH=4ebd28dd9664
-VERSION=5.5.1f1
+VERSION=2018.2.7f1
 
 download() {
   file=$1
