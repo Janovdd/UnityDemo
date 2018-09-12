@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LightSwitch : MonoBehaviour
 {
-    public GameObject light;
+    public Material light;
     public GameObject textO;
     public GameObject textC;
 
@@ -17,10 +17,11 @@ public class LightSwitch : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            textO.SetActive(light.activeSelf);
-            textC.SetActive(!light.activeSelf);
+            textC.SetActive(true);
+            textO.SetActive(true);
         }
     }
+
     void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "Player")
@@ -29,18 +30,16 @@ public class LightSwitch : MonoBehaviour
             textC.SetActive(false);
         }
     }
+
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
-                // toggle the light. If off turn it on,  if on turn it off
-                light.SetActive(!light.activeSelf);
-                // update the texts based on the new active state.
-                textO.SetActive(light.activeSelf);
-                textC.SetActive(!light.activeSelf);
+                light.DisableKeyword("_EMISSION");
             }
+            
         }
     }
 }
