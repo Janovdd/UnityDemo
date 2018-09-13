@@ -9,4 +9,10 @@ install:
 - ./TravisScripts/install.sh
 script:
 - ./TravisScripts/build.sh
-
+deploy:
+  provider: heroku
+  api_key:
+    secure: "eV7iF97HweoO1qimbcx6vX6AzOUVnAhnfq7BuxkfYSRUsd13kyXldpyJrb7yBzxQEPkYGVnLJZU40dN/mAUet5JcaqxcAX8vACokcsQ6hV/0bBEH8+vomjknAhDKc6hq/9S8fR1Vi/oLHIfGN4v6/UUiUt/kI1XeMQ3BS2F8Ed2SDITEVV/LtpNlj9/3hA8rU3OiBW3jiSHquzFKxofXEFTRdwyMCN1YshtAS8pE0EpAqXUvIcUPvkwEe7KOr6qNIXGqM0wLWU2Kg3gqs2drKwtyCVQKj19niaUtSOCw/3K6OWQIVhybP3f9T2wUgwtUA2uuAUNC6qRrP73Ap9MbEsRSeVR7eonkWCsOMBnhWax/IFxtHXpjnpa/20K5neXimxpg0uyVAUA2wXjwjfE2UhBzO6pNtXfOar5z6PPegQ9DDFLOwvVZuYgHoQpu6SeYuPVMQV8Z1IqZFgMeZkxxCc84zIH2BcjAFszQ9gjYujgtFt336BWCyv/uHBixXqr6CoHODGcRpu6oGrRhdiaBvrwzo3+J3E+9yvtXNxz/5IHse/K7LgbTe9zKJZ+MiEDxVI9/ldsTjbbQJAlEhzlrH4uAIF7jBl8ak2fwk32M7KHmY47OgabND22WNlW5HoXkYh9oAQrWTrHetBRsaCoB7VvsB5PgcLo/9SJWUrmLndE=" 
+  app: unity-demo
+  on:
+    repo: Janovdd/UnityDemo
