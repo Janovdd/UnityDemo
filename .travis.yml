@@ -1,4 +1,4 @@
-language: csharp
+language: objective-c
 osx_image: xcode9.2
 rvm:
 - 2.2
