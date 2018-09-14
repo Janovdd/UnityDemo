@@ -37,10 +37,12 @@ echo "Attempting to build $project for WebGL"
  -batchmode \
  -nographics \
  -silent-crashes \
- -logFile \
+ -logFile $(pwd)/unity.log\
  -projectPath $(pwd)/ \
+ -buildWebGLPlayer "$(pwd)/Build/webgl/$project.html" \
+ # -executeMethod BuildScript.WebGL \
  -quit \
- -executeMethod BuildScript.WebGL
+
  
- echo "Build logs (WebGL)"
+ echo "Build logs (webgl)"
  cat $(pwd)/unity.log
