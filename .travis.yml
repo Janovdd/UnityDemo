@@ -10,9 +10,9 @@ install:
 script:
 - ./TravisScripts/build.sh
 deploy:
-  provider: heroku
-  api_key:
-    secure: Vn+IXzEOjXxw+Ub5Ka4okTMmeZSmkQkR1mqPuF5VlDF/vplMx6y3ZrnrzHwPCR3ffBn2HxiWTrEw+q5xlmuW+lZdFG778p/ESVpL51CdmaAZFV/CUhy51FD8h+fV5zBc3j7wncjw6KIfZMIz7VwaGzEnin7Em0E9lSfUojeqVXQn6vO0MBcPlEwo5yNYVAjhTqU1WmYbjbp3q0y3x0whvnQ3iZoQdO9CXL5FRtzxoBxkft0nKgMsMmwBZJmyHtBYpIa6ljCR3eO4UPxwGXQs7t6zF076kYy2fyHb479oCY0Cc7GOfv2z31pQqnRymOVMF3sByWBmnjMr1F5pFgAwcwKM1yxzn1KivzeGOew1PM/74HAEgFDcjJUWGYKVtZcQcQk15v6x03314kmPfPauNHvPpnALjmJq2FgkouO+/qzX2NPZyl90Yx0SdutJH39aWQYO1ZbhfBCek21KrzLbDdVl8o3W4zhMCYhbEPV7h1tmn9OkPj/eTpTJE3kHppDjl5E3B/l24Ud7iNuzXfTlu0DaEd8HsjweyxnXvgvnCdNfxlwE0mxUucw1elwFixHL4ZDjV//BnVEWrRPMsmST6il94Af5KCbNzF2DLRCgySysNauAqzbOQGNq5EoEYPgx7vy6G5AJh1OKHRvctf0/FOdVDTjEy+2u/JrZPXEyboo=
-  app: unity-demo
+  provider: pages
+  skip-cleanup: true
+  github-token: 117499fb90f75dc1f0580b360f4d07a2d289c523117499fb90f75dc1f0580b360f4d07a2d289c523
+  keep-history: true
   on:
     branch: demojano
