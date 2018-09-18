@@ -12,8 +12,6 @@ script:
 notifications:
     email: false
 deploy:
- - edge:
-    branch: v1.8.47
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
