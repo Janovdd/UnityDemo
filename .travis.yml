@@ -6,13 +6,14 @@ before_install:
 - chmod +x ./TravisScripts/install.sh
 - chmod +x ./TravisScripts/build.sh
 install:
-- ./TravisScripts/install.sh
+- "./TravisScripts/install.sh"
 script:
-- ./TravisScripts/build.sh
+- "./TravisScripts/build.sh"
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: 117499fb90f75dc1f0580b360f4d07a2d289c523117499fb90f75dc1f0580b360f4d07a2d289c523
+  github-token: hQrnBIBmqPEGOAw6EI2D6JU+dJUtLGcr9WuZsLlFUcLJo+rzhUAWhVdlfNC0QGrtzH68UrjhcX6x27TEFLGaXuFb3UhDeBbgvcWmtY6B2IL8NmKUElFZhpRE3UdNzgWaQQStBrU7Dx4pFhBXqwdGx4OKQ2VN6sCIiWtyV6A/D6goPN30ew0/H76+odOOyaDv/ytk/4PdBPRckPddjigOyx5Jdgdmxw3hZM78mFxdDBgKpherSt9Fc4qMc0aIAtAFJ7ajpSCDPQdCtieGWgPVdBT6owFJL5mUfPwM6eqtB8eHZq3FSRcFC5x86Lq0Za/ZmoRBqI+QRifpPwVn4/kOx6XC5ftpLCk/HM5dDnqLRIGT1b90giu/ObSMdW3MrcSMrTJQ0y5jr0xeSAyhWUEKhQ15C5lwnTV8RgcjfQTHF/PuXj+bi7nIYfdzr+vZjyC8+7JKZ8ItPZoLEi0mJiyU2K7I2jK/lyuzE7nmGFRxEx5IWi1oFY6/KgXukM6joBIN0O09ulIXOlxOUwKs67LCpA/QNhCtAjBnbaviE2pWogABNt42cq+ZNrJbXy7XsUnqnW9tBOYLcls1xf52MprAIGzR2DCeN43OVEDS/rfpteAxOKaP8cnrTm2aBoloM8b7lKMZQ9rKwbMj10Y1JnjglWTIIJY/8+wAn/PZ/yWxHD0=
   keep-history: true
   on:
     branch: demojano
+
