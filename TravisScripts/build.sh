@@ -1,8 +1,6 @@
-! /bin/sh
+#! /bin/sh
 
 project="unity-project"
-
- 
 
 echo "Attempting build of $project for Windows"
 echo $(pwd)
