@@ -3,14 +3,13 @@
 project="unity-project"
 
 echo "Attempting build of $project for Windows"
-echo $(pwd)
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
  -batchmode \
  -nographics \
  -silent-crashes \
- -logFile $(pwd)/unity.log \
- -projectPath $(pwd) \
- -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
+ -logFile C:/Users/janov/Desktop/VRGW308/UnityDemo/unity.log \
+ -projectPath C:\Users\janov\Desktop\VRGW308\UnityDemo \
+ -buildWindowsPlayer "C:/Users/janov/Desktop/VRGW308/UnityDemo/Build/windows/$project.exe" \
  -quit
 	
 echo "Build logs (Windows)"
@@ -21,22 +20,22 @@ echo "Attempting build of $project for OSX"
  -batchmode \
  -nographics \
  -silent-crashes \
- -logFile $(pwd)/unity.log \
- -projectPath $(pwd) \
- -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
+ -logFile C:/Users/janov/Desktop/VRGW308/UnityDemo/unity.log \
+ -projectPath C:/Users/janov/Desktop/VRGW308/UnityDemo/ \
+ -buildOSXUniversalPlayer "C:/Users/janov/Desktop/VRGW308/UnityDemo/Build/osx/$project.app" \
  -quit
 
  echo "Build logs (OSX)"
- cat $(pwd)/unity.log
+ cat C:\Users\janov\Desktop\VRGW308\UnityDemo/unity.log
 
 echo "Attempting to build $project for WebGL"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
  -batchmode \
  -nographics \
  -silent-crashes \
- -logFile $(pwd)/unity.log\
- -projectPath $(pwd)/ \
- -buildWebGLPlayer "$(pwd)/Build/webgl/$project.html" \
+ -logFile C:/Users/janov/Desktop/VRGW308/UnityDemo/unity.log\
+ -projectPath C:/Users/janov/Desktop/VRGW308/UnityDemo/ \
+ -buildWebGLPlayer "C:/Users/janov/Desktop/VRGW308/UnityDemo/Build/webgl/$project.html" \
  # -executeMethod BuildScript.WebGL \
  -quit \
 
